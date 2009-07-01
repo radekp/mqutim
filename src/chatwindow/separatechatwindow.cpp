@@ -410,7 +410,7 @@ void SeparateChatWindow::Vibrate()
 //    qDebug() << "Start vibrate";
     QVibrateAccessory vib;
     vib.setVibrateNow( true );
-    QTimer::singleShot(500, this, SLOT(stopVibrate()));
+    QTimer::singleShot(300, this, SLOT(stopVibrate())); //CHANGED: 500 -> 300
 }
 
 void SeparateChatWindow::stopVibrate()
