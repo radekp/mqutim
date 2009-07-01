@@ -119,6 +119,7 @@ qutIM::qutIM(QWidget *parent, Qt::WFlags f ) :
                                       settingsAction);
   AbstractContextLayer::instance().createActions();
 
+  QtopiaApplication::setPowerConstraint(QtopiaApplication::DisableSuspend); //CHANGED: added - prevent suspend
 }
 
 qutIM::~qutIM()
@@ -152,6 +153,7 @@ void qutIM::appQuit()
 {
   AbstractContactList::instance().saveSettings();
 //	letMeQuit = true;
+  QtopiaApplication::setPowerConstraint(QtopiaApplication::Enable); //CHANGED: added - restore power saving settings
   QCoreApplication::exit(0);
 //	close();
 }
