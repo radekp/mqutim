@@ -89,6 +89,8 @@ icqAccount::~icqAccount()
 void icqAccount::createAccountButton(QHBoxLayout *boxLayout)
 {
 	accountLineButton = new accountButton;
+        accountLineButton->setMaximumWidth(55); //CHANGED: added
+        accountLineButton->setMaximumHeight(55); //
 	boxLayout->addWidget(accountLineButton, 0, Qt::AlignRight);
   accountLineButton->setWhatsThis(icqUin);
 	accountLineButton->setIcon(currentIcon);
