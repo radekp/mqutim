@@ -77,7 +77,7 @@ public:
 	void doubleClickedBuddy(treeBuddyItem *);
 	void showItemContextMenu(const QList<QAction*> &action_list, 
 			const QString &item_name, int item_type, const QPoint &point_menu);
-	void readMessageFrom(treeBuddyItem *);
+//	void readMessageFrom(treeBuddyItem *); //CHANGED: commented
     inline QHash<QString, treeBuddyItem*> getBuddyList() const { return buddyList; }
 	QHash<quint16, treeGroupItem*> groupList;
 	void updateSorting();
@@ -142,8 +142,8 @@ private slots:
 	void getMessage(quint16);
 	void getOfflineMessage();
 	void setMessageIconToContact();
-	void deleteChatWindow(QObject *);
-	void deleteHistoryWindow(QObject *);
+	//void deleteChatWindow(QObject *); //CHANGED: commented
+	//void deleteHistoryWindow(QObject *); //CHANGED: commented
 	void sendMessage(const messageFormat &);
 
 	void msgSettingsChanged();

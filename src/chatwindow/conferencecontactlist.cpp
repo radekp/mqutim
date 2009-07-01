@@ -32,6 +32,8 @@ bool ConferenceContactListEventEater::eventFilter(QObject *obj, QEvent *event)
     return QObject::eventFilter(obj, event);
   if (event->type() == QEvent::ContextMenu)
   {
+//CHANGED: commented - no ContextMenu in QtE
+/*
     QContextMenuEvent *menu_event = static_cast<QContextMenuEvent *>(event);
     QListView *list_view = qobject_cast<QListView *>(obj->parent());
     if (!list_view)
@@ -39,6 +41,7 @@ bool ConferenceContactListEventEater::eventFilter(QObject *obj, QEvent *event)
     QModelIndex index = list_view->indexAt(menu_event->pos());
     if (index.isValid())
       m_contact_list->sendEventClicked(index,menu_event->globalPos());
+*/
   }
   if (event->type() == QEvent::MouseButtonDblClick)
   {

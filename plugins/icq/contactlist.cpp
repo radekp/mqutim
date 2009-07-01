@@ -1030,7 +1030,7 @@ void contactListTree::readMessageStack()
 {
 	foreach(treeBuddyItem *item, messageList)
 	{
-		readMessageFrom(item);
+		//readMessageFrom(item); //CHANGED: commented
 	}
 }
 
@@ -1546,7 +1546,7 @@ void contactListTree::activateWindow(const QString &uin)
 	if ( messageList.contains(uin) )
 	{
 
-		readMessageFrom(messageList.value(uin));
+		//readMessageFrom(messageList.value(uin)); //CHANGED: commented
 	}
 }
 
