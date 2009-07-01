@@ -17,7 +17,8 @@ ContactListView::ContactListView(QWidget *parent)
   QtopiaApplication::setStylusOperation(viewport(), QtopiaApplication::RightOnHold);
   setContextMenuPolicy(Qt::DefaultContextMenu);
 
-  connect(this, SIGNAL(doubleClicked(QModelIndex)), SLOT(onDoubleClicked(QModelIndex)));
+  //connect(this, SIGNAL(doubleClicked(QModelIndex)), SLOT(onDoubleClicked(QModelIndex))); //CHANGED: doubleClicked -> clicked
+  connect(this, SIGNAL(clicked(QModelIndex)), SLOT(onDoubleClicked(QModelIndex))); //
   connect(this, SIGNAL(collapsed(QModelIndex)), SLOT(onCollapsed(QModelIndex)));
   connect(this, SIGNAL(expanded(QModelIndex)), SLOT(onExpanded(QModelIndex)));
 }
