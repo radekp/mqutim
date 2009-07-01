@@ -334,7 +334,8 @@ void PluginSystem::loadPlugins()
 
   QStringList files;
   /*	QString place = QCoreApplication::applicationDirPath()+"/../lib/qutim/";*/
-  QString place = QCoreApplication::applicationDirPath()+"/../lib/plugins/";
+  //QString place = Qtopia::qtopiaDir()+"/plugins/mqutim/"; //CHANGED: added + commented
+  QString place = QCoreApplication::applicationDirPath()+"/../plugins/mqutim/"; //CHANGED: path
   QStringList result = findPlugins(place);
   files << result;
 
@@ -342,9 +343,19 @@ void PluginSystem::loadPlugins()
   	result = findPlugins(place);
           files << result;*/
 
-  place = QCoreApplication::applicationDirPath()+"/plugins/";
+  place = QCoreApplication::applicationDirPath()+"/plugins/"; //CHANGED: added
   result = findPlugins(place);
   files << result;
+  place = QCoreApplication::applicationDirPath()+"/plugins/mqutim/"; //CHANGED: path
+  result = findPlugins(place);
+  files << result;
+  place = QCoreApplication::applicationDirPath()+"/plugins/mqutim/icq/"; //CHANGED: added
+  result = findPlugins(place);
+  files << result;
+  place = QCoreApplication::applicationDirPath()+"/plugins/mqutim/jabber/"; //CHANGED: added
+  result = findPlugins(place);
+  files << result;
+
   foreach(const QString &filename, files)
   loadPlugin(filename);
 }
