@@ -18,6 +18,8 @@ CONFIG+=qtopia
 STRING_LANGUAGE=en_US
 #LANGUAGES=en_US
 
+INC = $$shellQuote($$path(,project))
+
 # Package information (used for qbuild packages)
 pkg [
     name=mqutim
@@ -40,17 +42,17 @@ DEPENDPATH += . \
     src/notifications \
     src/sound
 INCLUDEPATH += . \
-    src \
-    src/contactlist \
-    include \
-    src/idle \
-    src/ex \
-    src/chatwindow \
-    src/history \
-    src/notifications \
-    src/antispam \
-    src/sound \
-    src/globalsettings
+    $$INC/src \
+    $$INC/src/contactlist \
+    $$INC/include \
+    $$INC/src/idle \
+    $$INC/src/ex \
+    $$INC/src/chatwindow \
+    $$INC/src/history \
+    $$INC/src/notifications \
+    $$INC/src/antispam \
+    $$INC/src/sound \
+    $$INC/src/globalsettings
 
 # Input
 HEADERS += src/aboutinfo.h \
